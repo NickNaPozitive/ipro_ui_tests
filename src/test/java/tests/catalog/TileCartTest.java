@@ -17,12 +17,12 @@ public class TileCartTest extends BaseTest {
     @DisplayName("Тест аворизации пользователя MARKET и переход на вид плиткой")
     @ParameterizedTest
     @CsvSource({
-//            LOGIN_MARKET + "," + PASSWORD_MARKET,
-//            LOGIN_IPRO + "," + PASSWORD_IPRO,
+            LOGIN_MARKET + "," + PASSWORD_MARKET,
+            LOGIN_IPRO + "," + PASSWORD_IPRO,
             "1,1"})
     public void checkTileCart(String login, String pass){
 
-        basePage.open(Constant.Urls.PROD_HOME_PAGE);
+        basePage.open(Constant.Urls.ITEST_HOME_PAGE);
 
         if (!login.equals("1")) {
             iproHomePage
@@ -37,7 +37,7 @@ public class TileCartTest extends BaseTest {
             iproHomePage
                     .clearAlerts();
             catalogTileCard
-                    .enterData()
+                    .enterDataForNoAuth()
                     .checkCatComplete();
         }
     }

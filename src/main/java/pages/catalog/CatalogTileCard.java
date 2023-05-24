@@ -23,7 +23,7 @@ public class CatalogTileCard extends BasePage {
     By typeOfView = By.xpath("//button[@title=\"Вид плиткой\"]");
 
 
-    public CatalogTileCard enterDataForAuth() {
+    public CatalogTileCard enterDataForNoAuth() {
         driver.findElement(catBtn).click();
         driver.findElement(category).click();
         driver.findElement(lowerCategory).click();

@@ -24,10 +24,10 @@ public class CommonActions extends Assert {
                 WebDriverManager.chromedriver().setup();
                 ChromeOptions options= new ChromeOptions();
 //                options.setHeadless(false);
-                options.addArguments("--kiosk");
+                options.addArguments("--start-maximized");
                 driver= new ChromeDriver(options);
                 JavascriptExecutor executor = (JavascriptExecutor)driver;
-                executor.executeScript("document.body.style.zoom = '0.10'");
+                executor.executeScript("document.body.style.zoom = '1'");
                 break;
             case "MOZILLA":
                 System.setProperty("webdriver.gecko.driver", "src/main/resources/geckodriver");
@@ -36,8 +36,11 @@ public class CommonActions extends Assert {
             default:
                 assertEquals(BROWSER_AND_PLATFORM, "qwe", "hello");
         }
-//        driver.manage().window().maximize();
-//        driver.manage().timeouts().implicitlyWait(IMPLICIT_WAIT, TimeUnit.SECONDS);
+        driver.manage().window().maximize();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().pageLoadTimeout(30L, TimeUnit.SECONDS);
+        driver.manage().timeouts().setScriptTimeout(3L, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         return driver;
     }
 }
