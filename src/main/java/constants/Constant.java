@@ -3,11 +3,17 @@ package constants;
 
 public class Constant {
 
-    public static final String LOGIN_MARKET = "9692161158";
-    public static final String PASSWORD_MARKET = "20101999dn";
+//    public static final String LOGIN_MARKET = "9692161158";
+//    public static final String PASSWORD_MARKET = "20101999dn";
+//
+//    public static final String LOGIN_IPRO = "60004392dnv";
+//    public static final String PASSWORD_IPRO = "dgnp4133";
 
-    public static final String LOGIN_IPRO = "60004392dnv";
-    public static final String PASSWORD_IPRO = "dgnp4133";
+    public static final String LOGIN_MARKET = "9692161158";
+    public static final String PASSWORD_MARKET = "20101999d";
+
+    public static final String LOGIN_IPRO = "1326156dnv";
+    public static final String PASSWORD_IPRO = "wehj9345";
 
     public static class TimeOutVariables{
         public static final int IMPLICIT_WAIT = 2;

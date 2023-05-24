@@ -24,7 +24,7 @@ public class CommonActions extends Assert {
                 WebDriverManager.chromedriver().setup();
                 ChromeOptions options= new ChromeOptions();
 //                options.setHeadless(false);
-                options.addArguments("--start-maximized");
+//                options.addArguments("--kiosk");
                 driver= new ChromeDriver(options);
                 JavascriptExecutor executor = (JavascriptExecutor)driver;
                 executor.executeScript("document.body.style.zoom = '1'");
@@ -38,9 +38,7 @@ public class CommonActions extends Assert {
         }
         driver.manage().window().maximize();
         driver.manage().window().maximize();
-        driver.manage().timeouts().pageLoadTimeout(30L, TimeUnit.SECONDS);
-        driver.manage().timeouts().setScriptTimeout(3L, TimeUnit.SECONDS);
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(IMPLICIT_WAIT, TimeUnit.SECONDS);
         return driver;
     }
 }

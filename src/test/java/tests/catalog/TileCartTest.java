@@ -22,7 +22,7 @@ public class TileCartTest extends BaseTest {
             "1,1"})
     public void checkTileCart(String login, String pass){
 
-        basePage.open(Constant.Urls.ITEST_HOME_PAGE);
+        basePage.open(Urls.PROD_HOME_PAGE);
 
         if (!login.equals("1")) {
             iproHomePage
