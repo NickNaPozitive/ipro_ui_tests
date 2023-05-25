@@ -7,8 +7,6 @@ import pages.base.BasePage;
 import java.util.concurrent.TimeUnit;
 
 import static constants.Constant.TimeOutVariables.EXPLICIT_WAIT;
-import static constants.Constant.TimeOutVariables.IMPLICIT_WAIT;
-import static java.lang.Thread.sleep;
 
 public class CatalogTileCard extends BasePage {
 

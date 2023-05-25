@@ -13,11 +13,16 @@ public class Constant {
     public static final String PASSWORD_MARKET = "20101999d";
 
     public static final String LOGIN_IPRO = "1326156dnv";
-    public static final String PASSWORD_IPRO = "wehj9345";
+    public static final String PASSWORD_IPRO = "frrw4811";
+
+    public static final String PRODUCT_CODE = "34031304";
+    public static final String BRAND = "АВАНГАРД";
+
+
 
     public static class TimeOutVariables{
         public static final int IMPLICIT_WAIT = 2;
-        public static final int EXPLICIT_WAIT = 3;
+        public static final int EXPLICIT_WAIT = 5;
     }
     public static class Urls{
 //        public static final String IDEV_HOME_PAGE= "https://idev.etm.ru/";

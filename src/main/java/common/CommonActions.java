@@ -23,7 +23,7 @@ public class CommonActions extends Assert {
             case "CHROME":
                 WebDriverManager.chromedriver().setup();
                 ChromeOptions options= new ChromeOptions();
-//                options.setHeadless(false);
+                options.setHeadless(false);
 //                options.addArguments("--kiosk");
                 driver= new ChromeDriver(options);
                 JavascriptExecutor executor = (JavascriptExecutor)driver;

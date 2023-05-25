@@ -1,8 +1,5 @@
 package tests.catalog;
 
-import constants.Constant;
-import groovyjarjarantlr.BaseAST;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -12,15 +9,16 @@ import tests.base.BaseTest;
 import static constants.Constant.*;
 import static constants.Constant.PASSWORD_IPRO;
 
-public class TileCartTest extends BaseTest {
+public class TileCartSearchTest extends BaseTest {
+
     @Test
-    @DisplayName("Тест аворизации пользователя MARKET и переход на вид плиткой")
+    @DisplayName("Работы поиска в катлоге в вид плиткой")
     @ParameterizedTest
     @CsvSource({
             LOGIN_MARKET + "," + PASSWORD_MARKET,
             LOGIN_IPRO + "," + PASSWORD_IPRO,
             "1,1"})
-    public void checkTileCart(String login, String pass) {
+    public void checkSearch(String login, String pass) {
 
         basePage.open(Urls.PROD_HOME_PAGE);
 
@@ -32,14 +30,22 @@ public class TileCartTest extends BaseTest {
             catalogTileCard
                     .enterData()
                     .checkCatComplete();
+            catalogTileCartSearch
+                    .inputData()
+                    .clickSearch()
+                    .checkResult();
         } else {
             iproHomePage
                     .clearAlerts();
             catalogTileCard
                     .enterDataForNoAuth()
                     .checkCatComplete();
+            catalogTileCartSearch
+                    .inputData()
+                    .clickSearch()
+                    .checkResult();
+
         }
     }
-
 
 }

@@ -1,28 +1,26 @@
 package tests.catalog;
 
 import constants.Constant;
-import groovyjarjarantlr.BaseAST;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.ValueSource;
 import tests.base.BaseTest;
 
 import static constants.Constant.*;
-import static constants.Constant.PASSWORD_IPRO;
 
-public class TileCartTest extends BaseTest {
+public class TileCartBrandTest extends BaseTest {
     @Test
-    @DisplayName("Тест аворизации пользователя MARKET и переход на вид плиткой")
+    @DisplayName("Тест на наличие брендов")
     @ParameterizedTest
     @CsvSource({
-            LOGIN_MARKET + "," + PASSWORD_MARKET,
-            LOGIN_IPRO + "," + PASSWORD_IPRO,
-            "1,1"})
-    public void checkTileCart(String login, String pass) {
+            LOGIN_MARKET + "," + PASSWORD_MARKET  + "," +  BRAND,
+            LOGIN_IPRO + "," + PASSWORD_IPRO  + "," +  BRAND,
+            "1,1," + BRAND})
+    public void checkTileCartBrand(String login, String pass, String brand) {
 
-        basePage.open(Urls.PROD_HOME_PAGE);
+        basePage.open(Constant.Urls.PROD_HOME_PAGE);
 
         if (!login.equals("1")) {
             iproHomePage
@@ -32,14 +30,18 @@ public class TileCartTest extends BaseTest {
             catalogTileCard
                     .enterData()
                     .checkCatComplete();
+            catalogTileCartBrand
+                    .openList()
+                    .checkExist(brand);
         } else {
             iproHomePage
                     .clearAlerts();
             catalogTileCard
                     .enterDataForNoAuth()
                     .checkCatComplete();
+            catalogTileCartBrand
+                    .openList()
+                    .checkExist(brand);
         }
     }
-
-
 }
