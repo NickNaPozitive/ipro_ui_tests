@@ -86,11 +86,11 @@ public class CatalogTileCardSaveFilter extends BasePage {
     }
 
     public CatalogTileCardSaveFilter checkChoosenFilters() {
-//        scroller.executeScript("window.scrollBy(0,700)");
-//        driver.findElement(listOfManufacturers).click();
-//        driver.findElement(brandSearch).sendKeys("Конкорд");
-//        wait.until(ExpectedConditions.visibilityOfElementLocated(brandClick));
-//        assertEquals(true, driver.findElement(checkOn).isSelected(), "Неверно выбран бренд");
+        scroller.executeScript("window.scrollBy(0,700)");
+        driver.findElement(listOfManufacturers).click();
+        driver.findElement(brandSearch).sendKeys("Конкорд");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(brandClick));
+        assertEquals(true, driver.findElement(checkOn).isSelected(), "Неверно выбран бренд");
 
         scroller.executeScript("window.scrollBy(0,900)");
         driver.findElement(listOfViens).click();
