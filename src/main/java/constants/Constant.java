@@ -22,7 +22,7 @@ public class Constant {
 
     public static class TimeOutVariables{
         public static final int IMPLICIT_WAIT = 2;
-        public static final int EXPLICIT_WAIT = 5;
+        public static final int EXPLICIT_WAIT = 10;
     }
     public static class Urls{
 //        public static final String IDEV_HOME_PAGE= "https://idev.etm.ru/";

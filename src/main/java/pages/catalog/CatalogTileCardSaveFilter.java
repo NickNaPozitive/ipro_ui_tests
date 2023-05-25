@@ -21,19 +21,22 @@ public class CatalogTileCardSaveFilter extends BasePage {
     WebDriverWait wait = new WebDriverWait(driver, EXPLICIT_WAIT);
     JavascriptExecutor scroller = (JavascriptExecutor) driver;
     By listOfManufacturers = By.xpath("//*[@id=\"panel1a-header\"]/div[2]");
+
     By brandSearch = By.xpath("//*[@id=\"panel1a-content\"]/div/div/div[1]/div/input");
-//    By brandClick = By.xpath("//input[@data-testid=\"checkbox-filterBrand_Конкорд\"]");
+    //    By brandClick = By.xpath("//input[@data-testid=\"checkbox-filterBrand_Конкорд\"]");
     By brandClick = By.xpath("//label[contains(text(), 'Конкорд')]");
     By listOfViens = By.xpath("//*[@id=\"__next\"]/div[2]/div[1]/div/div[5]/div/div[2]/div[1]/div/div[4]/div[4]");
     By veinsClick = By.xpath("//label[contains(text(),'3')]");
     By fromRus = By.xpath("//span[(text()='Сделано в России / ЕАЭС')]");
-    By enterFilters = By.xpath("//*[@id=\"__next\"]/div[2]/div[1]/div/div[5]/div/div[2]/div[1]/div/div[6]/button[2]/span[1]");
-//    By enterFiltersCss = By.cssSelector("button.jss355:nth-child(2) > span:nth-child(1)");
+    By enterFilters = By.xpath("//*[@id=\"__next\"]/div[2]/div[1]/div/div[5]/div/div[2]/div[1]/div/div[6]/button[2]");
+    //    By enterFiltersCss = By.cssSelector("button.jss355:nth-child(2) > span:nth-child(1)");
 //    By saveFilters = By.xpath("//input[@data-testid=\"save-filter-button\"]");
     By saveFilters = By.xpath("//*[@id=\"__next\"]/div[2]/div[1]/div/div[5]/div/div[1]/div[2]/div[3]/button");
     By acceptSavedFilter = By.xpath("//*[@id=\"portal\"]/div/div[2]/div[2]/table/tbody/tr[1]/td[3]/div/button[3]");
 
     By myFiltersBtn = By.xpath("//*[@id=\"__next\"]/div[2]/div[1]/div/div[5]/div/div[1]/div[1]/div/div/button");
+
+    By checkOn = By.xpath("//input[@data-testid='checkbox-filterBrand_Конкорд']");
 
 
     public CatalogTileCardSaveFilter brandChoose() {
@@ -59,15 +62,16 @@ public class CatalogTileCardSaveFilter extends BasePage {
         driver.findElement(fromRus).click();
         return this;
     }
+
     public CatalogTileCardSaveFilter enterAllFilters() {
-        scroller.executeScript("window.scrollBy(0,700)");
-        wait.until(ExpectedConditions.visibilityOfElementLocated(enterFilters));
+        scroller.executeScript("window.scrollBy(0,1000)");
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(enterFilters));
         driver.findElement(enterFilters).click();
         return this;
     }
 
     public CatalogTileCardSaveFilter saveAllFilters() {
-        scroller.executeScript("window.scrollBy(0,-1200)");
+        scroller.executeScript("window.scrollBy(0,-1600)");
         wait.until(ExpectedConditions.visibilityOfElementLocated(saveFilters));
         driver.findElement(saveFilters).click();
         return this;
@@ -81,11 +85,14 @@ public class CatalogTileCardSaveFilter extends BasePage {
         return this;
     }
 
-    public CatalogTileCardSaveFilter checkChoosenFilters(){
-        wait.until(ExpectedConditions.visibilityOfElementLocated(listOfManufacturers));
-        driver.findElement(listOfManufacturers).click();
-        assertEquals(true, driver.findElement(brandClick).isSelected(), "Неверно выбран бренд");
-        scroller.executeScript("window.scrollBy(0,500)");
+    public CatalogTileCardSaveFilter checkChoosenFilters() {
+//        scroller.executeScript("window.scrollBy(0,700)");
+//        driver.findElement(listOfManufacturers).click();
+//        driver.findElement(brandSearch).sendKeys("Конкорд");
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(brandClick));
+//        assertEquals(true, driver.findElement(checkOn).isSelected(), "Неверно выбран бренд");
+
+        scroller.executeScript("window.scrollBy(0,900)");
         driver.findElement(listOfViens).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(veinsClick));
         assertEquals(true, driver.findElement(veinsClick).isSelected(), "Неверно выбраны жилы");

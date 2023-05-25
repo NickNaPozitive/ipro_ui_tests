@@ -37,7 +37,10 @@ public class TileCardSaveFilterTest extends BaseTest {
         catalogTileCardSaveFilter
                 .enterAllFilters()
                 .saveAllFilters()
-                .chooseSavedFilter()
+                .chooseSavedFilter();
+        basePage
+                .waiter();
+        catalogTileCardSaveFilter
                 .checkChoosenFilters();
 
 
