@@ -37,7 +37,7 @@ public class TileCartBrandTest extends BaseTest {
             iproHomePage
                     .clearAlerts();
             catalogTileCard
-                    .enterDataForNoAuth()
+//                    .enterDataForNoAuth()
                     .checkCatComplete();
             catalogTileCartBrand
                     .openList()

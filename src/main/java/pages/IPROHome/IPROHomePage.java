@@ -1,7 +1,10 @@
 package pages.IPROHome;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.base.BasePage;
 
 
@@ -15,6 +18,9 @@ public class IPROHomePage extends BasePage {
     public IPROHomePage(WebDriver driver) {
         super(driver);
     }
+
+    WebDriverWait wait = new WebDriverWait(driver, EXPLICIT_WAIT);
+    JavascriptExecutor scroller = (JavascriptExecutor) driver;
 
     By regButton = By.xpath("//button[@data-testid=\"authorization-button\"]");
     By inputLogin = By.xpath("//input[@name=\"login\"]");
@@ -44,6 +50,7 @@ public class IPROHomePage extends BasePage {
     }
 
     public IPROHomePage clickForLog() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(submitBtn));
         driver.findElement(submitBtn).click();
         return this;
     }
