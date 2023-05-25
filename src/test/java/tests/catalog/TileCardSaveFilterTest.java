@@ -7,9 +7,8 @@ import org.junit.jupiter.params.provider.CsvSource;
 import tests.base.BaseTest;
 
 import static constants.Constant.*;
-import static constants.Constant.PASSWORD_IPRO;
 
-public class TileCardSaveFilter extends BaseTest {
+public class TileCardSaveFilterTest extends BaseTest {
 
     @Test
     @DisplayName("Тест сохранения фильтров")
@@ -31,8 +30,8 @@ public class TileCardSaveFilter extends BaseTest {
                 .checkCatComplete();
         catalogTileCardSaveFilter
                 .brandChoose()
-                .veinsChoose()
-                .fromRusChoose();
+                .veinsChoose();
+//                .fromRusChoose();
         basePage
                 .waiter();
         catalogTileCardSaveFilter
