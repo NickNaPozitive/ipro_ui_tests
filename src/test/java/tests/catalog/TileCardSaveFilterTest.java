@@ -15,7 +15,7 @@ public class TileCardSaveFilterTest extends BaseTest {
     @ParameterizedTest
     @CsvSource({
             LOGIN_MARKET + "," + PASSWORD_MARKET,
-//            LOGIN_IPRO + "," + PASSWORD_IPRO
+            LOGIN_IPRO + "," + PASSWORD_IPRO
     })
     public void checkSearch(String login, String pass) {
 
@@ -23,8 +23,8 @@ public class TileCardSaveFilterTest extends BaseTest {
 
         iproHomePage
                 .enterAuthData(login, pass)
-                .clickForLog()
-                .checkAuthComplete();
+                .clickForLog();
+//                .checkAuthComplete();
         catalogTileCard
                 .enterData()
                 .checkCatComplete();

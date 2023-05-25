@@ -19,9 +19,11 @@ public class BaseTest {
     protected CatalogTileCardCategory catalogTileCardCategory = new CatalogTileCardCategory(driver);
     protected CatalogTileCardSaveFilter catalogTileCardSaveFilter = new CatalogTileCardSaveFilter(driver);
 
+
     @AfterEach
     public void close(){
         if(HOLD_BROWSER_OPEN){
+            driver.manage().deleteAllCookies();
             driver.close();
             driver.quit();
         }

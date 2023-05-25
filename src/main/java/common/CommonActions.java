@@ -38,6 +38,7 @@ public class CommonActions extends Assert {
         }
         driver.manage().window().maximize();
         driver.manage().window().maximize();
+        driver.manage().deleteAllCookies();
         driver.manage().timeouts().implicitlyWait(IMPLICIT_WAIT, TimeUnit.SECONDS);
         return driver;
     }

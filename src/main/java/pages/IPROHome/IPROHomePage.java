@@ -11,6 +11,7 @@ import pages.base.BasePage;
 import java.util.concurrent.TimeUnit;
 
 import static constants.Constant.TimeOutVariables.EXPLICIT_WAIT;
+import static constants.Constant.TimeOutVariables.IMPLICIT_WAIT;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class IPROHomePage extends BasePage {
@@ -19,7 +20,7 @@ public class IPROHomePage extends BasePage {
         super(driver);
     }
 
-    WebDriverWait wait = new WebDriverWait(driver, EXPLICIT_WAIT);
+    WebDriverWait wait = new WebDriverWait(driver, IMPLICIT_WAIT);
     JavascriptExecutor scroller = (JavascriptExecutor) driver;
 
     By regButton = By.xpath("//button[@data-testid=\"authorization-button\"]");
@@ -33,6 +34,8 @@ public class IPROHomePage extends BasePage {
 
 
     public IPROHomePage enterAuthData(String login, String pass) {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(allClear));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(allRight));
         driver.findElement(allClear).click();
         driver.findElement(allRight).click();
         driver.findElement(regButton).click();
@@ -44,6 +47,8 @@ public class IPROHomePage extends BasePage {
     }
 
     public IPROHomePage clearAlerts() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(allClear));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(allRight));
         driver.findElement(allClear).click();
         driver.findElement(allRight).click();
         return this;
@@ -61,4 +66,12 @@ public class IPROHomePage extends BasePage {
         assertEquals("Дегтярёв Никита Витальевич", namePerson);
         return this;
     }
+
+    public IPROHomePage checkAuthIproComplete() {
+        driver.manage().timeouts().implicitlyWait(EXPLICIT_WAIT, TimeUnit.SECONDS);
+        String namePerson = driver.findElement(nameIpro).getText();
+        assertEquals("Дегтярёв Никита Витальевич", namePerson);
+        return this;
+    }
+
 }
