@@ -17,7 +17,8 @@ public class TileCartBrandTest extends BaseTest {
     @CsvSource({
             LOGIN_MARKET + "," + PASSWORD_MARKET  + "," +  BRAND,
             LOGIN_IPRO + "," + PASSWORD_IPRO  + "," +  BRAND,
-            "1,1," + BRAND})
+            "1,1," + BRAND
+        })
     public void checkTileCartBrand(String login, String pass, String brand) {
 
         basePage.open(Constant.Urls.PROD_HOME_PAGE);
