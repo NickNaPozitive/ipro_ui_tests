@@ -20,7 +20,7 @@ public class CommonActions extends Assert {
     public static WebDriver createDriver(){
         WebDriver driver = null;
         switch (BROWSER_AND_PLATFORM){
-            case "CHROME":
+            case "CHROME_w/o_JS":
                 WebDriverManager.chromedriver().setup();
                 ChromeOptions options= new ChromeOptions();
                 options.setHeadless(false);

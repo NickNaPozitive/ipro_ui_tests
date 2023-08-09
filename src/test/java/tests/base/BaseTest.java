@@ -3,6 +3,7 @@ package tests.base;
 import common.CommonActions;
 import org.junit.jupiter.api.AfterEach;
 import org.openqa.selenium.WebDriver;
+import pages.Auth.RegIPRO;
 import pages.IPROHome.IPROHomePage;
 import pages.base.BasePage;
 import pages.catalog.*;
@@ -18,6 +19,8 @@ public class BaseTest {
     protected CatalogTileCardBrand catalogTileCartBrand = new CatalogTileCardBrand(driver);
     protected CatalogTileCardCategory catalogTileCardCategory = new CatalogTileCardCategory(driver);
     protected CatalogTileCardSaveFilter catalogTileCardSaveFilter = new CatalogTileCardSaveFilter(driver);
+
+    protected RegIPRO authIPRO = new RegIPRO(driver);
 
 
     @AfterEach
