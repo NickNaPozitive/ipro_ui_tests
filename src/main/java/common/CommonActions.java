@@ -1,14 +1,17 @@
 package common;
 
-import io.github.bonigarcia.wdm.FirefoxDriverManager;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import static common.Config.BROWSER_AND_PLATFORM;
@@ -19,19 +22,34 @@ public class CommonActions extends Assert {
 
     public static WebDriver createDriver(){
         WebDriver driver = null;
+        WebDriverManager.chromedriver().setup();
+        ChromeOptions options= new ChromeOptions();
+        options.setHeadless(false);
         switch (BROWSER_AND_PLATFORM){
-            case "CHROME_w/o_JS":
-                WebDriverManager.chromedriver().setup();
-                ChromeOptions options= new ChromeOptions();
-                options.setHeadless(false);
-//                options.addArguments("--kiosk");
-                driver= new ChromeDriver(options);
+            case "CHROME":
+                driver = new ChromeDriver(options);
                 JavascriptExecutor executor = (JavascriptExecutor)driver;
                 executor.executeScript("document.body.style.zoom = '1'");
                 break;
-            case "MOZILLA":
-                System.setProperty("webdriver.gecko.driver", "src/main/resources/geckodriver");
-                driver = new FirefoxDriver();
+            case "CHROME_w/t_js":
+                WebDriverManager.chromedriver().setup();
+                ChromeOptions optionsJS= new ChromeOptions();
+                optionsJS.setHeadless(false);
+                Map<String, Object> prefs = new HashMap<>();
+                prefs.put("profile.managed_default_content_settings.javascript", 2);
+                optionsJS.setExperimentalOption("prefs", prefs);
+                driver = new ChromeDriver(optionsJS);
+                JavascriptExecutor executorJS = (JavascriptExecutor)driver;
+                executorJS.executeScript("document.body.style.zoom = '1'");
+                break;
+            case "FIREFOX":
+                WebDriverManager.firefoxdriver().setup();
+                FirefoxOptions op= new FirefoxOptions();
+                op.setHeadless(false);
+                DesiredCapabilities dc = new DesiredCapabilities();
+                dc.setJavascriptEnabled(false);
+                op.merge(dc);
+                driver = new FirefoxDriver(op);
                 break;
             default:
                 assertEquals(BROWSER_AND_PLATFORM, "qwe", "hello");

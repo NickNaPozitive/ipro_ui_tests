@@ -11,7 +11,7 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 public class MailReader {
-    public static String fetchLast5Messages(String user, String password) throws MessagingException{
+    public static String getPassFromMail(String user, String password) throws MessagingException{
         String codeRegistration = "";
         try {
             String host = "imap.rambler.ru";

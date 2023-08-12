@@ -15,6 +15,7 @@ public class Constant {
 
     public static final String LOGIN_MARKET = "9692161158";
     public static final String EMAIL = "testetm@rambler.ru";
+    public static final String PASSWORD_EMAIL = "20101999dN";
     public static final String PASSWORD_MARKET = "20101999d";
 
     public static final String LOGIN_IPRO = "1326156dnv";
@@ -27,7 +28,7 @@ public class Constant {
 
     static {
         try {
-            CODE = MailReader.fetchLast5Messages("testetm@rambler.ru", "20101999dN");
+            CODE = MailReader.getPassFromMail(EMAIL, PASSWORD_EMAIL);
         } catch (MessagingException e) {
             throw new RuntimeException(e);
         }

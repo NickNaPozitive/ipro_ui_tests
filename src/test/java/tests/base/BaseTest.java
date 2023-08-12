@@ -3,11 +3,15 @@ package tests.base;
 import common.CommonActions;
 import org.junit.jupiter.api.AfterEach;
 import org.openqa.selenium.WebDriver;
-import pages.Auth.RegIPRO;
+import pages.resitration.RegIPRO;
 import pages.IPROHome.IPROHomePage;
 import pages.base.BasePage;
 import pages.catalog.*;
+import pages.seo.HeaderSEO;
+import pages.seo.MainPageSEO;
 
+
+//import static common.Config.BROWSER_AND_PLATFORM;
 import static common.Config.HOLD_BROWSER_OPEN;
 
 public class BaseTest {
@@ -19,8 +23,9 @@ public class BaseTest {
     protected CatalogTileCardBrand catalogTileCartBrand = new CatalogTileCardBrand(driver);
     protected CatalogTileCardCategory catalogTileCardCategory = new CatalogTileCardCategory(driver);
     protected CatalogTileCardSaveFilter catalogTileCardSaveFilter = new CatalogTileCardSaveFilter(driver);
-
-    protected RegIPRO authIPRO = new RegIPRO(driver);
+    protected RegIPRO regIPRO = new RegIPRO(driver);
+    protected HeaderSEO headerSEO = new HeaderSEO(driver);
+    protected MainPageSEO mainPage = new MainPageSEO(driver);
 
 
     @AfterEach
