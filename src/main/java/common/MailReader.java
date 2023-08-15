@@ -26,13 +26,11 @@ public class MailReader {
             emailFolder.open(Folder.READ_ONLY);
 
             Message[] messages = emailFolder.getMessages();
-
             Message message = messages[messages.length-1];
             String text = message.getContent().toString();
             codeRegistration = (text.substring(text.length() - 12)).substring(0,8);
             emailFolder.close(false);
             store.close();
-//            System.out.println(codeRegistration);
             return codeRegistration;
         } catch (NoSuchProviderException e) {
             e.printStackTrace();

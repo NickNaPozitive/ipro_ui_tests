@@ -9,9 +9,12 @@ import pages.base.BasePage;
 import pages.catalog.*;
 import pages.seo.HeaderSEO;
 import pages.seo.MainPageSEO;
+import pages.seo.TagsSEO;
 
 
 //import static common.Config.BROWSER_AND_PLATFORM;
+import java.time.Duration;
+
 import static common.Config.HOLD_BROWSER_OPEN;
 
 public class BaseTest {
@@ -26,6 +29,7 @@ public class BaseTest {
     protected RegIPRO regIPRO = new RegIPRO(driver);
     protected HeaderSEO headerSEO = new HeaderSEO(driver);
     protected MainPageSEO mainPage = new MainPageSEO(driver);
+    protected TagsSEO tags = new TagsSEO(driver);
 
 
     @AfterEach

@@ -23,14 +23,15 @@ public class CommonActions extends Assert {
     public static WebDriver createDriver(){
         WebDriver driver = null;
         WebDriverManager.chromedriver().setup();
-        ChromeOptions options= new ChromeOptions();
-        options.setHeadless(false);
         switch (BROWSER_AND_PLATFORM){
             case "CHROME":
+                ChromeOptions options= new ChromeOptions();
+                options.setHeadless(false);
                 driver = new ChromeDriver(options);
                 JavascriptExecutor executor = (JavascriptExecutor)driver;
                 executor.executeScript("document.body.style.zoom = '1'");
                 break;
+
             case "CHROME_w/t_js":
                 WebDriverManager.chromedriver().setup();
                 ChromeOptions optionsJS= new ChromeOptions();
@@ -42,6 +43,7 @@ public class CommonActions extends Assert {
                 JavascriptExecutor executorJS = (JavascriptExecutor)driver;
                 executorJS.executeScript("document.body.style.zoom = '1'");
                 break;
+
             case "FIREFOX":
                 WebDriverManager.firefoxdriver().setup();
                 FirefoxOptions op= new FirefoxOptions();

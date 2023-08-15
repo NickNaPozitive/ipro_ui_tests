@@ -5,7 +5,7 @@ import java.util.concurrent.TimeUnit;
 import static constants.Constant.TimeOutVariables.EXPLICIT_WAIT;
 
 public class BasePage {
-    protected WebDriver driver;
+    protected static WebDriver driver;
 
 
     public BasePage(WebDriver driver){
