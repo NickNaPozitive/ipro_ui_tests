@@ -40,8 +40,8 @@ public class Constant {
         public static final int EXPLICIT_WAIT = 5;
     }
     public static class Urls{
-        public static final String IDEV_HOME_PAGE= "https://idev.etm.ru/";
-//        public static final String IDEV_HOME_PAGE= "https://www.etm.ru/";
+//        public static final String IDEV_HOME_PAGE= "https://idev.etm.ru/";
+        public static final String IDEV_HOME_PAGE= "https://www.etm.ru/";
         public static final String ITEST_HOME_PAGE= "https://itest.etm.ru:3004";
         public static final String PROD_HOME_PAGE= "https://www.etm.ru/";
         public static final String TAG_PAGE= "https://www.etm.ru/tag/30120105_svetilnik-svetodiodnyj-zhkkh-12vt";

@@ -14,8 +14,6 @@ public class TagsSEO extends BasePage {
         super(driver);
     }
 
-    JavascriptExecutor scroller = (JavascriptExecutor) driver;
-    WebDriverWait wait = new WebDriverWait(driver, 50);
     public TagsSEO checkExistCards(String xpath, String nameOfTest) {
         getExistElementByQuantity(By.xpath(xpath), nameOfTest);
         return this;

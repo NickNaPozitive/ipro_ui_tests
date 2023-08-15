@@ -27,6 +27,7 @@ public class CommonActions extends Assert {
             case "CHROME":
                 ChromeOptions options= new ChromeOptions();
                 options.setHeadless(false);
+                options.addArguments("--remote-allow-origins=*");
                 driver = new ChromeDriver(options);
                 JavascriptExecutor executor = (JavascriptExecutor)driver;
                 executor.executeScript("document.body.style.zoom = '1'");
@@ -35,7 +36,8 @@ public class CommonActions extends Assert {
             case "CHROME_w/t_js":
                 WebDriverManager.chromedriver().setup();
                 ChromeOptions optionsJS= new ChromeOptions();
-                optionsJS.setHeadless(false);
+                optionsJS.setHeadless(true);
+                optionsJS.addArguments("--remote-allow-origins=*");
                 Map<String, Object> prefs = new HashMap<>();
                 prefs.put("profile.managed_default_content_settings.javascript", 2);
                 optionsJS.setExperimentalOption("prefs", prefs);

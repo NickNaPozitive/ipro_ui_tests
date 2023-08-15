@@ -3,6 +3,10 @@ package constants;
 import org.openqa.selenium.By;
 
 public class Paths {
+
+    public static final String enterButton = "//button[@data-testid=\"authorization-button\"]";
+
+    public static final String checkLoad = "//*[@id=\"home_slider\"]/div/a/img";
     public static final String CARDS_TABLE = "//h1[text()=\"Светильник светодиодный ЖКХ 12Вт\"]/../../../../div[2]/div/div[2]/div[2]/div/div";
     public static final String newsA = "//a[text()=\"Новости ассортимента\"]";
     public static final String iproNewsA = "//a[text()=\"Новости iPRO\"]";
