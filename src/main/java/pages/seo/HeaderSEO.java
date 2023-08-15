@@ -22,6 +22,7 @@ public class HeaderSEO extends BasePage {
 
     public HeaderSEO headerNews(String xpath, String nameOfTest){
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+
         getExistElement(By.xpath(xpath), nameOfTest);
         return this;
     }
