@@ -36,7 +36,7 @@ public class CommonActions extends Assert {
             case "CHROME_w/t_js":
                 WebDriverManager.chromedriver().setup();
                 ChromeOptions optionsJS= new ChromeOptions();
-                optionsJS.setHeadless(true);
+                optionsJS.setHeadless(false);
                 optionsJS.addArguments("--remote-allow-origins=*");
                 Map<String, Object> prefs = new HashMap<>();
                 prefs.put("profile.managed_default_content_settings.javascript", 2);

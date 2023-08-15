@@ -18,17 +18,9 @@ public class MainPageSEO extends BasePage {
 
     JavascriptExecutor scroller = (JavascriptExecutor) driver;
     WebDriverWait wait = new WebDriverWait(driver, 50);
-    By categoryTable = By.xpath("//div[@class=\"swiper jss188\"]/div/div");
-    By hitsTable = By.xpath("//h2[text()=\"Хиты продаж\"]/../../div[2]/div/div");
-    By advantagesTable = By.xpath("//h2[text()=\"Преимущества работы с ЭТМ\"]/../div/div");
-    By actionsTable = By.xpath("//h2[text()=\"Больше выгоды\"]/../../div[2]/div/div/div");
-    By assortmentTable = By.xpath("//h6[text()=\"Развитие ассортимента\"]/../span/div/div/div");
-    By newsTable = By.xpath("//h2[text()=\"Новости\"]/../../../div[2]/div/div/div");
-    By h1Text = By.xpath("//h1[text()=\"ЭТМ - комплексный поставщик инженерных систем\"]");
 
-    public MainPageSEO h1TextOnPage() {
-        EXIST = !driver.findElements(h1Text).isEmpty();
-        assertEquals(true, EXIST, "Нет " + h1Text + " в DOM");
+    public MainPageSEO h1TextOnPage(String xpath, String nameOfTest) {
+        getExistElement(By.xpath(xpath), nameOfTest);
         return this;
     }
 

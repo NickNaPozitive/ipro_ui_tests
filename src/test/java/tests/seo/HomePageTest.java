@@ -24,38 +24,42 @@ public class HomePageTest extends BaseTest {
             actionsA + "," + "Акции",
             loyaltyA + "," + "Программа лояльности",
     })
-    public void testHeader(String xpath, String nameOfTest) {
+    public void testHeader(String xpath, String nameOfTest) throws InterruptedException {
         basePage.open(Constant.Urls.IDEV_HOME_PAGE);
+
+        Thread.sleep(3000);
 
         headerSEO
                 .headerNews(xpath, nameOfTest)
                 .actions(xpath, nameOfTest);
     }
 
-//    @DisplayName("Проврка на существование в DOM блоков: " +
-//            "Заголовок h1\n" +
-//            "Блок Категорий (1 уровень)\n" +
-//            "Хиты продаж (сейчас только 1 карточка доступна)\n" +
-//            "Преимущества работы с ЭТМ\n" +
-//            "Блок Акции\n" +
-//            "Развитие ассортимента (доступен только 1 баннер)\n" +
-//            "Блок новостей")
-//    @ParameterizedTest
-//    @CsvSource({
-//
-//    })
-//    public void testMainPage() throws InterruptedException {
-//        basePage.open(Constant.Urls.IDEV_HOME_PAGE);
-//        mainPage
-//                .h1TextOnPage()
-//                .category()
-//                .hits()
-//                .advantagesCheck()
-//                .actionsCheck()
-//                .assortmentCheck()
-//                .newsCheck();
-//
-//    }
+    @DisplayName("Проврка на существование в DOM блоков")
+    @ParameterizedTest(name = "Тест №{index} -> Проврка на существование в DOM блоков -> {1}")
+    @CsvSource({
+            categoryTable + "," + "Категории",
+            hitsTable + "," + "Хиты продаж",
+            advantagesTable + "," + "Преимущества работы с ЭТМ",
+            actionsTable + "," + "Больше выгоды",
+            assortmentTable + "," + "Развитие ассортимента",
+            newsTable + "," + "Новости",
+            h1Text + "," + "ЭТМ - комплексный поставщик инженерных систем",
+    })
+    public void testMainPage(String xpath, String nameOfTest) throws InterruptedException {
+        basePage.open(Constant.Urls.IDEV_HOME_PAGE);
+
+        Thread.sleep(3000);
+
+        mainPage
+                .h1TextOnPage(xpath, nameOfTest)
+                .category(xpath, nameOfTest)
+                .hits(xpath, nameOfTest)
+                .advantagesCheck(xpath, nameOfTest)
+                .actionsCheck(xpath, nameOfTest)
+                .assortmentCheck(xpath, nameOfTest)
+                .newsCheck(xpath, nameOfTest);
+
+    }
 
 
 }

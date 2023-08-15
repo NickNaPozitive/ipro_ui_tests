@@ -20,7 +20,7 @@ public class TagsTest extends BaseTest {
 })
     public void tags(String xpath, String nameOfTest) {
         basePage.open(Constant.Urls.TAG_PAGE);
-        tags
+        tagsPage
                 .checkExistCards(xpath, nameOfTest);
     }
 }

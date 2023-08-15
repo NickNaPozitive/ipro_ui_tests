@@ -35,18 +35,22 @@ public class Constant {
     }
 
 
-    public static class TimeOutVariables{
+    public static class TimeOutVariables {
         public static final int IMPLICIT_WAIT = 10;
         public static final int EXPLICIT_WAIT = 5;
     }
-    public static class Urls{
-//        public static final String IDEV_HOME_PAGE= "https://idev.etm.ru/";
-        public static final String IDEV_HOME_PAGE= "https://www.etm.ru/";
-        public static final String ITEST_HOME_PAGE= "https://itest.etm.ru:3004";
-        public static final String PROD_HOME_PAGE= "https://www.etm.ru/";
-        public static final String TAG_PAGE= "https://www.etm.ru/tag/30120105_svetilnik-svetodiodnyj-zhkkh-12vt";
 
-        public static final String FUTURE_EVENTS_PAGE= "https://skills.etm.ru/events/";
+    public static class Urls {
+        //        public static final String IDEV_HOME_PAGE= "https://idev.etm.ru/";
+        public static final String IDEV_HOME_PAGE = "https://www.etm.ru/";
+//        public static final String IDEV_HOME_PAGE = "https://itest.etm.ru:3004";
+        public static final String PROD_HOME_PAGE = "https://www.etm.ru/";
+
+        public static final String TAG_PAGE = "https://www.etm.ru/tag/30120105_svetilnik-svetodiodnyj-zhkkh-12vt";
+        public static final String CARD_PAGE = "https://www.etm.ru/cat/nn/631301";
+
+
+        public static final String FUTURE_EVENTS_PAGE = "https://skills.etm.ru/events/";
 //        public static final String AUTH_PAGE= "https://www.google.com/";
     }
 }

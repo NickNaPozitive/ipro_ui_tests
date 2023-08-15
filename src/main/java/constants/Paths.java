@@ -16,4 +16,18 @@ public class Paths {
     public static final String actionsA = "//a[text()=\"Акции\"]";
     public static final String loyaltyA = "//a[text()=\"Программа лояльности\"]";
 
+    //MAIN PAGE SEO
+    public static final String  categoryTable = "//h1[text()=\"ЭТМ - комплексный поставщик инженерных систем\"]/../div/div[2]/div[2]/div/div";
+    public static final String  hitsTable = "//h2[text()=\"Хиты продаж\"]/../../div[2]/div/div";
+    public static final String  advantagesTable = "//h2[text()=\"Преимущества работы с ЭТМ\"]/../div/div";
+    public static final String  actionsTable = "//h2[text()=\"Больше выгоды\"]/../../div[2]/div/div/div";
+    public static final String  assortmentTable = "//h6[text()=\"Развитие ассортимента\"]/../span/div/div/div";
+    public static final String  newsTable = "//h2[text()=\"Новости\"]/../../../div[2]/div/div/div";
+    public static final String  h1Text = "//h1[text()=\"ЭТМ - комплексный поставщик инженерных систем\"]";
+
+
+    //CARD PAGE
+    public static final String  deliveryTable = "//h4[text()=\"Способы получения\"]/..";
+    public static final String  paymentTable = "//h4[text()=\"Оплата\"]/..";
+
 }
