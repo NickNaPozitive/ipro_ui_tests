@@ -13,6 +13,7 @@ import java.util.concurrent.TimeUnit;
 
 import static common.CommonJobs.getExistElement;
 import static common.CommonJobs.getExistElementByQuantity;
+import static constants.Constant.TimeOutVariables.EXPLICIT_WAIT;
 import static constants.Constant.TimeOutVariables.IMPLICIT_WAIT;
 import static constants.Paths.checkLoad;
 import static constants.Paths.enterButton;
@@ -20,13 +21,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class HeaderSEO extends BasePage {
     public HeaderSEO(WebDriver driver) {super(driver);}
-    WebDriverWait wait = new WebDriverWait(driver, IMPLICIT_WAIT);
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT));
     JavascriptExecutor scroller = (JavascriptExecutor) driver;
 
     boolean exist;
 
 
-    public HeaderSEO headerNews(String xpath, String nameOfTest){
+    public HeaderSEO headerNewsAndAction(String xpath, String nameOfTest){
         scroller.executeScript("window.scrollTo(0, document.body.scrollHeight)");
         getExistElement(By.xpath(xpath), nameOfTest);
         return this;

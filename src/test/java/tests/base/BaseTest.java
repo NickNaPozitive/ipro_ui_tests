@@ -7,10 +7,7 @@ import pages.resitration.RegIPRO;
 import pages.IPROHome.IPROHomePage;
 import pages.base.BasePage;
 import pages.catalog.*;
-import pages.seo.CardPageSEO;
-import pages.seo.HeaderSEO;
-import pages.seo.MainPageSEO;
-import pages.seo.TagsPageSEO;
+import pages.seo.*;
 
 
 //import static common.Config.BROWSER_AND_PLATFORM;
@@ -31,6 +28,9 @@ public class BaseTest {
     protected MainPageSEO mainPage = new MainPageSEO(driver);
     protected TagsPageSEO tagsPage = new TagsPageSEO(driver);
     protected CardPageSEO cardPage= new CardPageSEO(driver);
+    protected BrandPageSEO brandPage= new BrandPageSEO(driver);
+    protected CatalogPageSEO catalogPage= new CatalogPageSEO(driver);
+
 
 
     @AfterEach
@@ -39,7 +39,7 @@ public class BaseTest {
         if (HOLD_BROWSER_OPEN) {
             driver.manage().deleteAllCookies();
             driver.close();
-//            driver.quit();
+            driver.quit();
         }
     }
 }

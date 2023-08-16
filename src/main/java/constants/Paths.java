@@ -17,17 +17,31 @@ public class Paths {
     public static final String loyaltyA = "//a[text()=\"Программа лояльности\"]";
 
     //MAIN PAGE SEO
-    public static final String  categoryTable = "//h1[text()=\"ЭТМ - комплексный поставщик инженерных систем\"]/../div/div[2]/div[2]/div/div";
-    public static final String  hitsTable = "//h2[text()=\"Хиты продаж\"]/../../div[2]/div/div";
-    public static final String  advantagesTable = "//h2[text()=\"Преимущества работы с ЭТМ\"]/../div/div";
-    public static final String  actionsTable = "//h2[text()=\"Больше выгоды\"]/../../div[2]/div/div/div";
-    public static final String  assortmentTable = "//h6[text()=\"Развитие ассортимента\"]/../span/div/div/div";
-    public static final String  newsTable = "//h2[text()=\"Новости\"]/../../../div[2]/div/div/div";
-    public static final String  h1Text = "//h1[text()=\"ЭТМ - комплексный поставщик инженерных систем\"]";
+    public static final String categoryTable = "//h1[text()=\"ЭТМ - комплексный поставщик инженерных систем\"]/../div/div[2]/div[2]/div/div";
+    public static final String hitsTable = "//h2[text()=\"Хиты продаж\"]/../../div[2]/div/div";
+    public static final String advantagesTable = "//h2[text()=\"Преимущества работы с ЭТМ\"]/../div/div";
+    public static final String actionsTable = "//h2[text()=\"Больше выгоды\"]/../../div[2]/div/div/div";
+    public static final String assortmentTable = "//h6[text()=\"Развитие ассортимента\"]/../span/div/div/div";
+    public static final String newsTable = "//h2[text()=\"Новости\"]/../../../div[2]/div/div/div";
+    public static final String h1Text = "//h1[text()=\"ЭТМ - комплексный поставщик инженерных систем\"]";
 
 
     //CARD PAGE
-    public static final String  deliveryTable = "//h4[text()=\"Способы получения\"]/..";
-    public static final String  paymentTable = "//h4[text()=\"Оплата\"]/..";
+    public static final String deliveryTable = "//h4[text()=\"Способы получения\"]/..";
+    public static final String paymentTable = "//h4[text()=\"Оплата\"]/..";
+    public static final String specificationsTableOne = "//h2[text()=\"Характеристики\"]/../div/div/div[1]/p";
+    public static final String specificationsTableTwo = "//h2[text()=\"Характеристики\"]/../div/div/div[2]/p";
+    public static final String specificationsTableThree = "//div[text()=\"Характеристики\"]/../noindex/div/div/p";
+    public static final String certificates = "//h2[text()=\"Сертификаты\"]/../div/a";
+    public static final String dontForget = "//h2[text()=\"Не забудьте купить\"]/../div";
+    public static final String allVariants = "//h2[text()=\"Все варианты товара\"]";
 
+    //BRAND PAGE
+    public static final String filters = "//h2[text()=\"Категории\"]/../div/div/div";
+    public static final String famousProsucts = "//h2[text()=\"Популярные товары\"]/../div/div/div";
+    public static final String actions = "//h2[text()=\"Популярные товары\"]/../../../../div[4]/div[2]/div/div/div";
+
+    //CATALOG PAGE
+    public static final String category = "//p[text()=\"Категории\"]/../div";
+    public static final String cardsTableCatalog = "//h1[text()=\"Кабели с медной токопроводящей жилой \"]/../../../../div[2]/div/div[2]/div[2]/div/div";
 }

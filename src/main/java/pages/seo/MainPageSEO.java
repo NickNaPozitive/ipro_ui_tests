@@ -7,6 +7,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.base.BasePage;
 
+import java.time.Duration;
+
 import static common.CommonJobs.getExistElement;
 import static constants.Constant.EXIST;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -17,7 +19,7 @@ public class MainPageSEO extends BasePage {
     }
 
     JavascriptExecutor scroller = (JavascriptExecutor) driver;
-    WebDriverWait wait = new WebDriverWait(driver, 50);
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(50));
 
     public MainPageSEO h1TextOnPage(String xpath, String nameOfTest) {
         getExistElement(By.xpath(xpath), nameOfTest);

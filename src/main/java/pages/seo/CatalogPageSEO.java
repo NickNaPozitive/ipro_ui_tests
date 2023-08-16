@@ -11,22 +11,21 @@ import java.time.Duration;
 import static common.CommonJobs.getExistElement;
 import static common.CommonJobs.getExistElementByQuantity;
 
-public class CardPageSEO extends BasePage {
-    public CardPageSEO(WebDriver driver) {
+public class CatalogPageSEO extends BasePage{
+    public CatalogPageSEO(WebDriver driver) {
         super(driver);
     }
 
     JavascriptExecutor scroller = (JavascriptExecutor) driver;
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(50));
 
-    public CardPageSEO checkPaymentDeliveryCertificates(String xpath, String nameOfTest) {
+    public CatalogPageSEO checkExist(String xpath, String nameOfTest) {
         getExistElement(By.xpath(xpath), nameOfTest);
         return this;
     }
 
-    public CardPageSEO checkSpecifications(String xpath, String nameOfTest) {
+    public CatalogPageSEO checkNumExist(String xpath, String nameOfTest) {
         getExistElementByQuantity(By.xpath(xpath), nameOfTest);
         return this;
     }
-
 }

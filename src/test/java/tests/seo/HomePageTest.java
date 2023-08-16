@@ -30,8 +30,7 @@ public class HomePageTest extends BaseTest {
         Thread.sleep(3000);
 
         headerSEO
-                .headerNews(xpath, nameOfTest)
-                .actions(xpath, nameOfTest);
+                .headerNewsAndAction(xpath, nameOfTest);
     }
 
     @DisplayName("Проврка на существование в DOM блоков")

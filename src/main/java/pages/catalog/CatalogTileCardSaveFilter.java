@@ -18,7 +18,7 @@ public class CatalogTileCardSaveFilter extends BasePage {
         super(driver);
     }
 
-    WebDriverWait wait = new WebDriverWait(driver, EXPLICIT_WAIT);
+    WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(EXPLICIT_WAIT));
     JavascriptExecutor scroller = (JavascriptExecutor) driver;
     By listOfManufacturers = By.xpath("//*[@id=\"panel1a-header\"]/div[2]");
     By brandSearch = By.xpath("//*[@id=\"panel1a-content\"]/div/div/div[1]/div/input");

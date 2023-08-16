@@ -13,18 +13,19 @@ import pages.base.BasePage;
 
 import javax.mail.MessagingException;
 import java.io.IOException;
-import static common.Config.BROWSER_AND_PLATFORM;
+import java.time.Duration;
+
 
 
 import static constants.Constant.PASSWORD_EMAIL;
 import static constants.Constant.TimeOutVariables.EXPLICIT_WAIT;
-import static constants.Constant.TimeOutVariables.IMPLICIT_WAIT;
+
 
 public class RegIPRO extends BasePage {
     public RegIPRO(WebDriver driver) {
         super(driver);
     }
-    WebDriverWait wait = new WebDriverWait(driver, IMPLICIT_WAIT);
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT));
     ChromeOptions options = new ChromeOptions();
 
     By allClear = By.xpath("//span[contains(.,'Все понятно')]");
@@ -33,12 +34,12 @@ public class RegIPRO extends BasePage {
     By regForIPRO = By.xpath("//a[@data-testid=\"go-to-registration-button\"][2]");
     By inputEmail = By.xpath("//input[@name=\"email\"]");
 //    By btnSendCode = By.xpath("//div[2]/button[@class=\"styles_btn__SDghj\"]");
-    By btnSendCode = By.xpath("/html/body/div[3]/div[3]/div[2]/div[2]/button");
+    By btnSendCode = By.xpath("//span[text()=\"Регистрация юридического лица\"]/../../../div[2]/div[2]/button");
     By inputCode = By.xpath("//input[@name=\"smsCode\"]");
     By btnCont = By.xpath("//button[text()=\"Продолжить\"]");
 
 
-    public RegIPRO firstStepEmail(String email){
+    public RegIPRO firstStepEmail(String email) throws InterruptedException {
         wait.until(ExpectedConditions.visibilityOfElementLocated(allClear));
         wait.until(ExpectedConditions.visibilityOfElementLocated(allRight));
         driver.findElement(allClear).click();
@@ -49,9 +50,11 @@ public class RegIPRO extends BasePage {
         driver.findElement(inputEmail).clear();
         driver.findElement(inputEmail).sendKeys(email);
         driver.findElement(btnSendCode).click();
+        Thread.sleep(3000);
         return this;
     }
-    public RegIPRO firstStepCode(String email) throws MessagingException, IOException {
+    public RegIPRO firstStepCode(String email) throws MessagingException, IOException, InterruptedException {
+        Thread.sleep(3000);
         String code = MailReader.getPassFromMail(email, PASSWORD_EMAIL);
         wait.until(ExpectedConditions.visibilityOfElementLocated(inputCode));
         driver.findElement(inputCode).clear();

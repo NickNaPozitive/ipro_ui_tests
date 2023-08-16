@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.base.BasePage;
 
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import static constants.Constant.TimeOutVariables.EXPLICIT_WAIT;
@@ -20,7 +21,7 @@ public class IPROHomePage extends BasePage {
         super(driver);
     }
 
-    WebDriverWait wait = new WebDriverWait(driver, IMPLICIT_WAIT);
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT));
     JavascriptExecutor scroller = (JavascriptExecutor) driver;
 
     By regButton = By.xpath("//button[@data-testid=\"authorization-button\"]");
