@@ -1,5 +1,6 @@
 package pages.seo;
 
+import org.junit.jupiter.api.Disabled;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -10,7 +11,6 @@ import java.time.Duration;
 
 import static common.CommonJobs.getExistElement;
 import static common.CommonJobs.getExistElementByQuantity;
-
 public class BrandPageSEO extends BasePage {
     public BrandPageSEO(WebDriver driver) {
         super(driver);

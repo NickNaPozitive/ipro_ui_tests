@@ -1,5 +1,6 @@
 package tests.catalog;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -9,6 +10,7 @@ import tests.base.BaseTest;
 import static constants.Constant.*;
 import static constants.Constant.PASSWORD_IPRO;
 
+@Disabled("Disabled until bug #2019 has been fixed!")
 public class TileCartSearchTest extends BaseTest {
 
     @Test

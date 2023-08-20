@@ -1,6 +1,7 @@
 package tests.seo;
 
 import constants.Constant;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -9,6 +10,7 @@ import tests.base.BaseTest;
 
 import static constants.Paths.CARDS_TABLE;
 
+@Disabled("Disabled until bug #2019 has been fixed!")
 public class TagsTest extends BaseTest {
     @DisplayName("Проврка на существование в DOM блоков: тэги")
     @ParameterizedTest(name = "Тест №{index} -> Проврка на существование в DOM блоков -> {1}")

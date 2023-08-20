@@ -1,5 +1,6 @@
 package pages.seo;
 
+import org.junit.jupiter.api.Disabled;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -18,7 +19,6 @@ import static constants.Constant.TimeOutVariables.IMPLICIT_WAIT;
 import static constants.Paths.checkLoad;
 import static constants.Paths.enterButton;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
 public class HeaderSEO extends BasePage {
     public HeaderSEO(WebDriver driver) {super(driver);}
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT));

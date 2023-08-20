@@ -4,6 +4,7 @@ import common.MailReader;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
@@ -22,6 +23,7 @@ import static constants.Constant.TimeOutVariables.EXPLICIT_WAIT;
 
 
 public class RegIPRO extends BasePage {
+    WebElement details;
     public RegIPRO(WebDriver driver) {
         super(driver);
     }
@@ -30,10 +32,9 @@ public class RegIPRO extends BasePage {
 
     By allClear = By.xpath("//span[contains(.,'Все понятно')]");
     By allRight = By.xpath("//span[contains(.,'Все верно')]");
-    By enterButton = By.xpath("//button[@data-testid=\"authorization-button\"]");
+    By enterButton = By.xpath("//button[@data-testid=\"authorization-button1\"]");
     By regForIPRO = By.xpath("//a[@data-testid=\"go-to-registration-button\"][2]");
     By inputEmail = By.xpath("//input[@name=\"email\"]");
-//    By btnSendCode = By.xpath("//div[2]/button[@class=\"styles_btn__SDghj\"]");
     By btnSendCode = By.xpath("//span[text()=\"Регистрация юридического лица\"]/../../../div[2]/div[2]/button");
     By inputCode = By.xpath("//input[@name=\"smsCode\"]");
     By btnCont = By.xpath("//button[text()=\"Продолжить\"]");

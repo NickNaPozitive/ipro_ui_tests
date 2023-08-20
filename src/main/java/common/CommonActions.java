@@ -1,6 +1,7 @@
 package common;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -8,8 +9,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.Assert;
-
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -18,7 +18,7 @@ import static common.Config.BROWSER_AND_PLATFORM;
 import static constants.Constant.TimeOutVariables.IMPLICIT_WAIT;
 
 
-public class CommonActions extends Assert {
+public class CommonActions {
 
     public static WebDriver createDriver(){
         WebDriver driver = null;
@@ -56,7 +56,7 @@ public class CommonActions extends Assert {
                 driver = new FirefoxDriver(op);
                 break;
             default:
-                assertEquals(BROWSER_AND_PLATFORM, "qwe", "hello");
+                Assertions.fail("INCORRECT BROWSER NAME: " + BROWSER_AND_PLATFORM);
         }
         driver.manage().window().maximize();
         driver.manage().window().maximize();

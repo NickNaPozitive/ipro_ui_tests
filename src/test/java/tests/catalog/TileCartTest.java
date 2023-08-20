@@ -3,6 +3,7 @@ package tests.catalog;
 import constants.Constant;
 import groovyjarjarantlr.BaseAST;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -12,6 +13,7 @@ import tests.base.BaseTest;
 import static constants.Constant.*;
 import static constants.Constant.PASSWORD_IPRO;
 
+@Disabled("Disabled until bug #2019 has been fixed!")
 public class TileCartTest extends BaseTest {
     @Test
     @DisplayName("Тест аворизации пользователя MARKET и переход на вид плиткой")

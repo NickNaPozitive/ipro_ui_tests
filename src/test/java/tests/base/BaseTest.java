@@ -1,8 +1,15 @@
 package tests.base;
 
 import common.CommonActions;
+import io.qameta.allure.Allure;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.jupiter.api.extension.ExtensionContext;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.logging.LogType;
 import pages.resitration.RegIPRO;
 import pages.IPROHome.IPROHomePage;
 import pages.base.BasePage;
@@ -10,10 +17,10 @@ import pages.catalog.*;
 import pages.seo.*;
 
 
-//import static common.Config.BROWSER_AND_PLATFORM;
-
 import static common.Config.HOLD_BROWSER_OPEN;
 
+@ExtendWith(Listener.class)
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class BaseTest {
     protected WebDriver driver = CommonActions.createDriver();
     protected BasePage basePage = new BasePage(driver);
@@ -27,10 +34,9 @@ public class BaseTest {
     protected HeaderSEO headerSEO = new HeaderSEO(driver);
     protected MainPageSEO mainPage = new MainPageSEO(driver);
     protected TagsPageSEO tagsPage = new TagsPageSEO(driver);
-    protected CardPageSEO cardPage= new CardPageSEO(driver);
-    protected BrandPageSEO brandPage= new BrandPageSEO(driver);
-    protected CatalogPageSEO catalogPage= new CatalogPageSEO(driver);
-
+    protected CardPageSEO cardPage = new CardPageSEO(driver);
+    protected BrandPageSEO brandPage = new BrandPageSEO(driver);
+    protected CatalogPageSEO catalogPage = new CatalogPageSEO(driver);
 
 
     @AfterEach

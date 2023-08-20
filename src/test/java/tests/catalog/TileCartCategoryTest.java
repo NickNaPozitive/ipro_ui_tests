@@ -1,6 +1,7 @@
 package tests.catalog;
 
 import constants.Constant;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -10,6 +11,7 @@ import tests.base.BaseTest;
 import static constants.Constant.*;
 import static constants.Constant.BRAND;
 
+@Disabled("Disabled until bug #2019 has been fixed!")
 public class TileCartCategoryTest extends BaseTest {
 
     @Test

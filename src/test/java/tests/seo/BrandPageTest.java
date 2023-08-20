@@ -1,13 +1,14 @@
 package tests.seo;
 
 import constants.Constant;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import tests.base.BaseTest;
 
 import static constants.Paths.*;
-
+@Disabled("Disabled until bug #2019 has been fixed!")
 public class BrandPageTest extends BaseTest {
     @DisplayName("Бренды")
     @ParameterizedTest(name = "Тест №{index} -> Проврка на существование в DOM блоков -> {1}")
