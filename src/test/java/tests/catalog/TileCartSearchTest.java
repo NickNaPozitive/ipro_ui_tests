@@ -10,7 +10,7 @@ import tests.base.BaseTest;
 import static constants.Constant.*;
 import static constants.Constant.PASSWORD_IPRO;
 
-@Disabled("Disabled until bug #2019 has been fixed!")
+//@Disabled("Disabled until bug #2019 has been fixed!")
 public class TileCartSearchTest extends BaseTest {
 
     @Test

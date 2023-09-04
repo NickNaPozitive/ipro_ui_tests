@@ -8,10 +8,10 @@ import org.junit.jupiter.params.provider.CsvSource;
 import tests.base.BaseTest;
 
 import static constants.Paths.*;
-@Disabled("Disabled until bug #2019 has been fixed!")
+//@Disabled("Disabled until bug #2019 has been fixed!")
 public class BrandPageTest extends BaseTest {
     @DisplayName("Бренды")
-    @ParameterizedTest(name = "Тест №{index} -> Проврка на существование в DOM блоков -> {1}")
+    @ParameterizedTest(name = "Тест №{index} -> Проверка на существование в DOM блоков -> {1}")
     @CsvSource({
             filters + "," + "Фильтры",
             famousProsucts + "," + "Популярные товары",

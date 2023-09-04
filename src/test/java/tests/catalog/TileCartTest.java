@@ -13,7 +13,7 @@ import tests.base.BaseTest;
 import static constants.Constant.*;
 import static constants.Constant.PASSWORD_IPRO;
 
-@Disabled("Disabled until bug #2019 has been fixed!")
+//@Disabled("Disabled until bug #2019 has been fixed!")
 public class TileCartTest extends BaseTest {
     @Test
     @DisplayName("Тест аворизации пользователя MARKET и переход на вид плиткой")
@@ -21,7 +21,8 @@ public class TileCartTest extends BaseTest {
     @CsvSource({
             LOGIN_MARKET + "," + PASSWORD_MARKET,
             LOGIN_IPRO + "," + PASSWORD_IPRO,
-            "1,1"})
+            "1,1"
+        })
     public void checkTileCart(String login, String pass) {
 
         basePage.open(Urls.PROD_HOME_PAGE);

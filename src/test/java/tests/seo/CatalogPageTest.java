@@ -9,10 +9,10 @@ import tests.base.BaseTest;
 
 import static constants.Paths.*;
 
-@Disabled("Disabled until bug #2019 has been fixed!")
+//@Disabled("Disabled until bug #2019 has been fixed!")
 public class CatalogPageTest extends BaseTest {
     @DisplayName("Проврка на существование в DOM блоков: новости, акции")
-    @ParameterizedTest(name = "Тест №{index} -> Проврка на существование в DOM блоков -> {1}")
+    @ParameterizedTest(name = "Тест №{index} -> Проверка на существование в DOM блоков -> {1}")
     @CsvSource({
             newsA + "," + "Новости ассортимента",
             iproNewsA + "," + "Новости iPRO",

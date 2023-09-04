@@ -29,7 +29,7 @@ public class CatalogTileCardSaveFilter extends BasePage {
     By fromRus = By.xpath("//span[(text()='Сделано в России / ЕАЭС')]");
     By enterFilters = By.xpath("//*[@id=\"__next\"]/div[2]/div[1]/div/div[5]/div/div[2]/div[1]/div/div[6]/button[2]");
 //    By enterFiltersCss = By.cssSelector("button.jss355:nth-child(2) > span:nth-child(1)");
-//    By saveFilters = By.xpath("//input[@data-testid=\"save-filter-button\"]");
+    //    By saveFilters = By.xpath("//input[@data-testid=\"save-filter-button\"]");
     By saveFilters = By.xpath("//*[@id=\"__next\"]/div[2]/div[1]/div/div[5]/div/div[1]/div[2]/div[3]/button");
     By acceptSavedFilter = By.xpath("//*[@id=\"portal\"]/div/div[2]/div[2]/table/tbody/tr[1]/td[3]/div/button[3]");
 

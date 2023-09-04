@@ -35,7 +35,7 @@ public class CommonActions {
 
             case "CHROME_w/t_js":
                 WebDriverManager.chromedriver().setup();
-                ChromeOptions optionsJS= new ChromeOptions();
+                ChromeOptions optionsJS = new ChromeOptions();
                 optionsJS.setHeadless(false);
                 optionsJS.addArguments("--remote-allow-origins=*");
                 Map<String, Object> prefs = new HashMap<>();
@@ -50,9 +50,9 @@ public class CommonActions {
                 WebDriverManager.firefoxdriver().setup();
                 FirefoxOptions op= new FirefoxOptions();
                 op.setHeadless(false);
-                DesiredCapabilities dc = new DesiredCapabilities();
-                dc.setJavascriptEnabled(false);
-                op.merge(dc);
+//                DesiredCapabilities dc = new DesiredCapabilities();
+//                dc.setJavascriptEnabled(false);
+//                op.merge(dc);
                 driver = new FirefoxDriver(op);
                 break;
             default:
