@@ -9,7 +9,6 @@ import tests.base.BaseTest;
 
 import static constants.Paths.*;
 
-//@Disabled("Disabled until bug #2019 has been fixed!")
 public class CardPageTest extends BaseTest {
     @DisplayName("Проврка на существование в DOM блоков: Оплата и  Доставка")
     @ParameterizedTest(name = "Тест №{index} -> Проверка на существование в DOM блоков -> {1}")

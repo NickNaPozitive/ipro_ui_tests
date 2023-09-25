@@ -12,9 +12,8 @@ import static constants.Constant.*;
 import static constants.Constant.PASSWORD_IPRO;
 import static constants.Paths.*;
 
-//@Disabled("Disabled until bug #2019 has been fixed!")
 public class HomePageTest extends BaseTest {
-    @DisplayName("Проврка на существование в DOM блоков: новости, акции")
+    @DisplayName("Проврка на существование на главной в DOM блоков: новости, акции")
     @ParameterizedTest(name = "Тест №{index} -> Проверка на существование в DOM блоков -> {1}")
     @CsvSource({
             newsA + "," + "Новости ассортимента",
@@ -34,7 +33,7 @@ public class HomePageTest extends BaseTest {
                 .headerNewsAndAction(xpath, nameOfTest);
     }
 
-    @DisplayName("Проврка на существование в DOM блоков")
+    @DisplayName("Проврка на существование на главной в DOM блоков")
     @ParameterizedTest(name = "Тест №{index} -> Проврка на существование в DOM блоков -> {1}")
     @CsvSource({
             categoryTable + "," + "Категории",

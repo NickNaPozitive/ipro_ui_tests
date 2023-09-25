@@ -18,11 +18,11 @@ public class Paths {
 
     //MAIN PAGE SEO
     public static final String categoryTable = "//h1[text()=\"ЭТМ - комплексный поставщик инженерных систем\"]/../div/div[2]/div[2]/div/div";
-    public static final String hitsTable = "//h2[text()=\"Хиты продаж\"]/../../div[2]/div/div";
-    public static final String advantagesTable = "//h2[text()=\"Преимущества работы с ЭТМ\"]/../div/div";
-    public static final String actionsTable = "//h2[text()=\"Больше выгоды\"]/../../div[2]/div/div/div";
-    public static final String assortmentTable = "//h6[text()=\"Развитие ассортимента\"]/../span/div/div/div";
-    public static final String newsTable = "//h2[text()=\"Новости\"]/../../../div[2]/div/div/div";
+    public static final String hitsTable = "//h3[text()=\"Хиты продаж\"]/../../div[2]/div/div";
+    public static final String advantagesTable = "//h3[text()=\"Преимущества работы с ЭТМ\"]/../div/div";
+    public static final String actionsTable = "//h3[text()=\"Больше выгоды\"]/../../div[2]/div/div/div";
+    public static final String assortmentTable = "//h3[text()=\"Развитие ассортимента\"]/../span/div/div/div";
+    public static final String newsTable = "//h3[text()=\"Новости\"]/../../../div[2]/div/div/div";
     public static final String h1Text = "//h1[text()=\"ЭТМ - комплексный поставщик инженерных систем\"]";
 
 
