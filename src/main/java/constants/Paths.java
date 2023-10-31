@@ -12,7 +12,8 @@ public class Paths {
     public static final String iproNewsA = "//a[text()=\"Новости iPRO\"]";
     public static final String companyA = "//a[text()=\"Новости компании\"]";
     public static final String articlesA = "//a[@href=\"/ipro3/articles\"]";
-    public static final String libraryA = "//a[text()=\"Техбиблиотека\"]";
+//    public static final String libraryA = "//a[text()=\"Техбиблиотека\"]";
+    public static final String libraryA = "//a[@href=\"/ipro3/library\"]";
     public static final String actionsA = "//a[text()=\"Акции\"]";
     public static final String loyaltyA = "//a[text()=\"Программа лояльности\"]";
 

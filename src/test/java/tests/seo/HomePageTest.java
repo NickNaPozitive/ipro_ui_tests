@@ -25,9 +25,9 @@ public class HomePageTest extends BaseTest {
             loyaltyA + "," + "Программа лояльности",
     })
     public void testHeader(String xpath, String nameOfTest) throws InterruptedException {
+        Thread.sleep(3000);
         basePage.open(Constant.Urls.IDEV_HOME_PAGE);
 
-        Thread.sleep(3000);
 
         headerSEO
                 .headerNewsAndAction(xpath, nameOfTest);
