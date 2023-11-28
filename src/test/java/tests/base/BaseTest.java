@@ -11,6 +11,7 @@ import pages.IPROHome.IPROHomePage;
 import pages.base.BasePage;
 import pages.catalog.*;
 import pages.seo.*;
+import pages.seoHTML.SearchSEO;
 
 
 //import static common.Config.BROWSER_AND_PLATFORM;
@@ -38,6 +39,8 @@ public class BaseTest {
 
     protected CardPageSEO cardPage = new CardPageSEO(driver);
     protected TagsPageSEO tagsPage = new TagsPageSEO(driver);
+
+    protected SearchSEO htmlPage = new SearchSEO(driver);
 
     @BeforeEach
     public void setUp() {

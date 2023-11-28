@@ -16,7 +16,6 @@ public class CatalogTileCard extends BasePage {
 
     By catBtn = By.xpath("//button[@data-testid=\"all-goods-button\"]");
     By category = By.xpath("/html/body/div[2]/div[3]/div/div[2]/div[1]/div[1]/ul/li[1]/div/div/div");
-
     By lowerCategory = By.xpath("//html/body/div[2]/div[3]/div/div[2]/div[1]/div[1]/ul/li[1]/div/ul/li[1]/div/div/p");
     By typeOfView = By.xpath("//button[@title=\"Вид плиткой\"]");
 
@@ -44,7 +43,7 @@ public class CatalogTileCard extends BasePage {
             Thread.sleep(3000);
             driver.findElement(typeOfView).isSelected();
         } catch (Exception e) {
-//            throw (e);
+            /* throw (e); */
         }
         return this;
     }

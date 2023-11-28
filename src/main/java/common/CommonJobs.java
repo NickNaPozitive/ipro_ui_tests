@@ -4,8 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import pages.base.BasePage;
 
-import javax.mail.MessagingException;
-
 import static constants.Constant.EXIST;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -26,4 +24,14 @@ public class CommonJobs extends BasePage {
         assertEquals(true, EXIST, "Нет " + nameOfTest + " в DOM");
     }
 
+    public static int countElements(By xpath) {
+        int countOfEl = driver.findElements(xpath).size();
+        return countOfEl;
+    }
+
+    public static void comparingJob(String expectedUrl, String url, String nameOfTest) {
+
+        assertEquals(expectedUrl, url.substring(0, url.length() - 5), "Нет " + nameOfTest + " в DOM");
+
+    }
 }

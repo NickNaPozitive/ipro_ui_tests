@@ -26,7 +26,7 @@ public class CommonActions {
         switch (BROWSER_AND_PLATFORM){
             case "CHROME":
                 ChromeOptions options= new ChromeOptions();
-                options.setHeadless(false);
+                options.setHeadless(true);
                 options.addArguments("--remote-allow-origins=*");
                 driver = new ChromeDriver(options);
                 JavascriptExecutor executor = (JavascriptExecutor)driver;

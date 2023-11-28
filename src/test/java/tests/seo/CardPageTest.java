@@ -13,7 +13,7 @@ public class CardPageTest extends BaseTest {
     @DisplayName("Проврка на существование в DOM блоков: Оплата и  Доставка")
     @ParameterizedTest(name = "Тест №{index} -> Проверка на существование в DOM блоков -> {1}")
     @CsvSource({
-//            deliveryTable + "," + "Способы получения" + "," + "631301", :скрыто, так как в задаче 6648 убрали блок
+//            deliveryTable + "," + "Способы получения" + "," + "631301",
             paymentTable + "," + "Оплата" + "," + "631301",
             certificates + "," + "Сертификаты" + "," + "631301",
             dontForget + "," + "Не забудьте купить" + "," + "631301",
@@ -52,8 +52,9 @@ public class CardPageTest extends BaseTest {
             loyaltyA + "," + "Программа лояльности",
     })
     public void testHeader(String xpath, String nameOfTest) throws InterruptedException {
-        Thread.sleep(4000);
         basePage.open(Constant.Urls.BRAND_PAGE);
+
+        Thread.sleep(3000);
 
         headerSEO
                 .headerNewsAndAction(xpath, nameOfTest);

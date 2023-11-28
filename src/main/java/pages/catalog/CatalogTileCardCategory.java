@@ -14,16 +14,16 @@ public class CatalogTileCardCategory extends BasePage {
 
     By catName = By.xpath("//div[text()=\"Кабели силовые с медной жилой для стационарной прокладки\"]");
     By catInBreadcrumb = By.xpath("//a[text()=\"Кабели силовые с медной жилой для стационарной прокладки\"]");
-    By catNameParant = By.xpath("//div[text()=\"Кабели с медной токопроводящей жилой\"]");
-    By catInBreadcrumbParant = By.xpath("//a[text()=\"Кабели с медной токопроводящей жилой\"]");
+    By catNameParent = By.xpath("//div[text()=\"Кабели с медной токопроводящей жилой\"]");
+    By catInBreadcrumbParent = By.xpath("//a[text()=\"Кабели с медной токопроводящей жилой\"]");
 
     public CatalogTileCardCategory compareNames(){
         String valueOfCatName= driver.findElement(catName).getText();
         String valueOfCatInBreadcrumb= driver.findElement(catInBreadcrumb).getText();
-        String valueOfCatNameParant= driver.findElement(catNameParant).getText();
-        String valueOfCatInBreadcrumbParant= driver.findElement(catInBreadcrumbParant).getText();
+        String valueOfCatNameParent= driver.findElement(catNameParent).getText();
+        String valueOfCatInBreadcrumbParent= driver.findElement(catInBreadcrumbParent).getText();
         assertEquals(valueOfCatName, valueOfCatInBreadcrumb, "Категории не совпадают");
-        assertEquals(valueOfCatNameParant, valueOfCatInBreadcrumbParant, "Родительсие категории не совпадают");
+        assertEquals(valueOfCatNameParent, valueOfCatInBreadcrumbParent, "Родительсие категории не совпадают");
         return this;
     }
 
