@@ -80,6 +80,10 @@ public class Paths {
     public static final String footerCatalog = "//h4[text()=\"iPRO\"]/../div/a";
     public static final String inputText = "//input[@placeholder='Умный поиск по названию, артикулу, свойству, производителю']";
 
+    // CARD PAGE: TITLE iPRO-6941
+
+    public static final String titleArticleNumber = "//title[text()='Купить ";
+
 
 
 }

@@ -48,6 +48,7 @@ public class Constant {
         public static final String AUTH_PAGE= "https://www.google.com/";
         public static final String BROKEN_BRAND_PAGE = "https://idev.etm.ru/brand/1758_gaussfdfds";
         public static final String SEARCHING_PAGE_TD = "https://idev.etm.ru/catalog?page=1&searchValue=лампа";
+        public static final String PRODUCT_PAGE = "https://idev.etm.ru/cat/nn/8622887";
 
     }
 }

@@ -9,16 +9,18 @@ import tests.base.BaseTest;
 
 import static constants.Constant.Urls.BROKEN_BRAND_PAGE;
 import static constants.Paths.*;
+import static constants.UrlsForRequestsAPI.urlCardForTestTitleFromRequest;
 
 public class SearchInHTMLTest extends BaseTest {
 
     @DisplayName("Проврка на content=\"noindex, nofollow\" при выдаче < 3")
     @ParameterizedTest(name = "Тест №{index} -> Проврка на content=\"noindex, nofollow\" при выдаче < 3 -> {1}")
     @CsvSource(value = {content + ":noindex,nofollow"}, delimiter = ':')
-    public void testHeader(String xpath, String nameOfTest) {
+    public void testHeader(String xpath, String nameOfTest) throws InterruptedException {
         basePage.open(Constant.Urls.BAD_PAGE_FOR_META);
 
         htmlPage
+                .whenAddingCookie_thenItIsPresent()
                 .findContentLowThenThree(xpath, nameOfTest);
 
     }
@@ -114,6 +116,21 @@ public class SearchInHTMLTest extends BaseTest {
 
         htmlPage
                 .findElementsInSearchPage(xpath, nameOfTest, lastWords);
+
+    }
+
+
+    @DisplayName("Дополнение к формированию title артикул")
+    @ParameterizedTest(name = "Тест №{index} -> Дополнение к формированию title артикул -> {1}")
+    @CsvSource(value = {
+            titleArticleNumber + ";Дополнение к формированию title артикул;gdsNameTitle, gdsArt, gdsMnfName;%s %s артикул %s %s | Интернет-магазин ЭТМ iPRO'];"
+                    + urlCardForTestTitleFromRequest,
+    }, delimiter = ';')
+    public void testTitleFromRequest(String xpath, String nameOfTest, String keys, String template, String urlForRequest) {
+        basePage.open(Constant.Urls.PRODUCT_PAGE);
+
+        htmlPage
+                .findElementsInCardPage(xpath, nameOfTest, keys, template, urlForRequest);
 
     }
 }
