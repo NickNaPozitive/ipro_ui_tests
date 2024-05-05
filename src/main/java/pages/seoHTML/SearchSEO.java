@@ -34,6 +34,7 @@ public class SearchSEO extends BasePage {
     }
 
     public SearchSEO findHttps(String xpath, String nameOfTest) {
+        System.out.println(xpath);
         getExistElement(By.xpath(xpath), nameOfTest);
         return this;
     }
@@ -51,9 +52,21 @@ public class SearchSEO extends BasePage {
     }
 
 
-    public SearchSEO findElementsInBrandPage(String xpath, String nameOfTest, String lastWords) {
+    public SearchSEO findTitleInBrandPage(String xpath, String nameOfTest, String lastWords) {
         String val = driver.findElement(By.xpath(nameBrand)).getText();
-        getExistElement(By.xpath(xpath + " " + val + lastWords.substring(1)), nameOfTest);
+        getExistElement(By.xpath(xpath + val + lastWords.substring(1)), nameOfTest);
+        return this;
+    }
+    public SearchSEO findTitleInCard(String xpath, String nameOfTest, String lastWords) {
+        String val = driver.findElement(By.xpath(nameBrand)).getAttribute("innerHTML").replaceFirst("<!-- --> <!-- -->", " артикул  ")
+                .replaceAll("<!-- --> <!-- -->", " ");
+        getExistElement(By.xpath(xpath + val + lastWords.substring(1)), nameOfTest);
+        return this;
+
+    }
+    public SearchSEO findDescriptionInBrandPage(String xpath, String nameOfTest, String lastWords) {
+        String val = driver.findElement(By.xpath(nameBrand)).getText();
+        getExistElement(By.xpath(xpath + "  " + val + lastWords.substring(1)), nameOfTest);
         return this;
     }
 
@@ -90,6 +103,7 @@ public class SearchSEO extends BasePage {
     }
 
     public SearchSEO findElementsInCardPage(String xpath, String nameOfTest, String keys, String template, String urlForRequest) {
+        logIn();
         getExistElement(By.xpath(String.format(template, formatedXParh(keys, urlForRequest, xpath))), nameOfTest);
         return this;
     }

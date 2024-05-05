@@ -11,6 +11,7 @@ import java.util.List;
 
 import static constants.Constant.EXIST;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class CommonJobs extends BasePage {
 
@@ -21,18 +22,17 @@ public class CommonJobs extends BasePage {
 
     public static void getExistElementByQuantity(By xpath, String nameOfTest) {
         int numOfEl = driver.findElements(xpath).size();
-        EXIST = numOfEl > 1 ? true : false;
-        assertEquals(true, EXIST, "Нехватает элементов в -> " + nameOfTest);
+        EXIST = numOfEl > 1;
+        assertTrue(EXIST, "Нехватает элементов в -> " + nameOfTest);
     }
 
     public static void getExistElement(By xpath, String nameOfTest) {
         EXIST = !driver.findElements(xpath).isEmpty();
-        assertEquals(true, EXIST, "Нет " + nameOfTest + " в DOM");
+        assertTrue(EXIST, "Нет " + nameOfTest + " в DOM");
     }
 
     public static int countElements(By xpath) {
-        int countOfEl = driver.findElements(xpath).size();
-        return countOfEl;
+        return driver.findElements(xpath).size();
     }
 
     public static void comparingJob(String expectedUrl, String url, String nameOfTest) {

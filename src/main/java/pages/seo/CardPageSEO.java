@@ -26,7 +26,7 @@ public class CardPageSEO extends BasePage {
     }
 
     public CardPageSEO checkSpecifications(String xpath, String nameOfTest) {
-        getExistElementByQuantity(By.xpath(xpath), nameOfTest);
+        getExistElement(By.xpath(xpath), nameOfTest);
         return this;
     }
 

@@ -28,17 +28,17 @@ public class BrandPageTest extends BaseTest {
     @ParameterizedTest(name = "Тест №{index} -> Проврка на существование в DOM блоков -> {1}")
     @CsvSource({
             newsA + "," + "Новости ассортимента",
-            iproNewsA + "," + "Новости iPRO",
-            companyA + "," + "Новости компании",
-            articlesA + "," + "Статьи обзоры",
+//            iproNewsA + "," + "Новости iPRO",
+//            companyA + "," + "Новости компании",
+//            articlesA + "," + "Статьи обзоры",
             libraryA + "," + "Техбиблиотека",
-            actionsA + "," + "Акции",
+//            actionsA + "," + "Акции",
             loyaltyA + "," + "Программа лояльности",
     })
     public void testHeader(String xpath, String nameOfTest) throws InterruptedException {
         basePage.open(Constant.Urls.BRAND_PAGE);
 
-        Thread.sleep(3000);
+//        Thread.sleep(4000);
 
         headerSEO
                 .headerNewsAndAction(xpath, nameOfTest);

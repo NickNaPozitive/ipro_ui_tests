@@ -19,23 +19,24 @@ import static constants.Constant.TimeOutVariables.IMPLICIT_WAIT;
 import static constants.Paths.checkLoad;
 import static constants.Paths.enterButton;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class HeaderSEO extends BasePage {
-    public HeaderSEO(WebDriver driver) {super(driver);}
+    public HeaderSEO(WebDriver driver) {
+        super(driver);
+    }
+
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT));
     JavascriptExecutor scroller = (JavascriptExecutor) driver;
 
-    boolean exist;
-
-
-    public HeaderSEO headerNewsAndAction(String xpath, String nameOfTest){
-        scroller.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+    public HeaderSEO headerNewsAndAction(String xpath, String nameOfTest) {
+//        scroller.executeScript("window.scrollTo(0, document.body.scrollHeight)");
         getExistElement(By.xpath(xpath), nameOfTest);
         return this;
     }
 
     public HeaderSEO actions(String xpath, String nameOfTest) throws InterruptedException {
 //        Thread.sleep(3000);
-        scroller.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+//        scroller.executeScript("window.scrollTo(0, document.body.scrollHeight)");
         getExistElement(By.xpath(xpath), nameOfTest);
         return this;
     }

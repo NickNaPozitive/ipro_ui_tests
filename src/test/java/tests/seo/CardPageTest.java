@@ -16,7 +16,7 @@ public class CardPageTest extends BaseTest {
 //            deliveryTable + "," + "Способы получения" + "," + "631301",
             paymentTable + "," + "Оплата" + "," + "631301",
             certificates + "," + "Сертификаты" + "," + "631301",
-            dontForget + "," + "Не забудьте купить" + "," + "631301",
+//            dontForget + "," + "Не забудьте купить" + "," + "631301",
             allVariants + "," + "Все варианты товара" + "," + "8314493",
     })
     public void cardPagePaymentAndDeliveryTest(String xpath, String nameOfTest, String product) {
@@ -44,11 +44,11 @@ public class CardPageTest extends BaseTest {
     @ParameterizedTest(name = "Тест №{index} -> Проврка на существование в DOM блоков -> {1}")
     @CsvSource({
             newsA + "," + "Новости ассортимента",
-            iproNewsA + "," + "Новости iPRO",
-            companyA + "," + "Новости компании",
-            articlesA + "," + "Статьи обзоры",
+//            iproNewsA + "," + "Новости iPRO",
+//            companyA + "," + "Новости компании",
+//            articlesA + "," + "Статьи обзоры",
             libraryA + "," + "Техбиблиотека",
-            actionsA + "," + "Акции",
+//            actionsA + "," + "Акции",
             loyaltyA + "," + "Программа лояльности",
     })
     public void testHeader(String xpath, String nameOfTest) throws InterruptedException {

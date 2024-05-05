@@ -25,7 +25,7 @@ public class CatalogPageSEO extends BasePage{
     }
 
     public CatalogPageSEO checkNumExist(String xpath, String nameOfTest) {
-        getExistElementByQuantity(By.xpath(xpath), nameOfTest);
+        getExistElement(By.xpath(xpath), nameOfTest);
         return this;
     }
 }

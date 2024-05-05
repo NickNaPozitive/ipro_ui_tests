@@ -13,9 +13,6 @@ import static constants.Paths.CARDS_TABLE;
 public class TagsTest extends BaseTest {
     @DisplayName("Проврка на существование в DOM блоков: тэги")
     @ParameterizedTest(name = "Тест №{index} -> Проверка на существование в DOM блоков -> {1}")
-//    @CsvSource(delimiter = '|', textBlock = """
-//                    CARDS_TABLE|    Проверка карточек товара на странице тега
-//            """)
     @CsvSource({
                     CARDS_TABLE + "," + "Проверка карточек товара на странице тега",
 })

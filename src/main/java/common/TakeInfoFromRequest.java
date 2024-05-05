@@ -2,6 +2,8 @@ package common;
 
 import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.response.Response;
+import lib.ApiCoreRequests;
+import lib.Assertions;
 import lib.BaseTestCase;
 
 import java.util.ArrayList;
@@ -11,6 +13,7 @@ import static constants.UrlsForRequestsAPI.urlCardForTestTitleFromRequest;
 import static io.restassured.RestAssured.given;
 
 public class TakeInfoFromRequest extends BaseTestCase {
+
 
     public String sessionIdImport() {
         String sessionId;
@@ -25,18 +28,19 @@ public class TakeInfoFromRequest extends BaseTestCase {
         return sessionId;
     }
 
-    /*
-    * Метод берет данные 1 уровня из запроса
-    * */
-    public List<String> takeInfoFstGrade(List<String> listOfKeys, String urlCardForTestTitleFromRequest) {
-        List<String> listOfVal = new ArrayList<>();
-        for (int i = 0; i <= listOfKeys.size() - 1; i++) {
-            Response responseGetAuth = given()
-                    .filter(new AllureRestAssured())
-                    .get(urlCardForTestTitleFromRequest)
-                    .andReturn();
-            listOfVal.add(getSingleHeaderFromJson(responseGetAuth, "data", "." + listOfKeys.get(i)));
+        /*
+         * Метод берет данные 1 уровня из запроса
+         * */
+        public List<String> takeInfoFstGrade (List < String > listOfKeys, String urlCardForTestTitleFromRequest){
+            List<String> listOfVal = new ArrayList<>();
+            for (int i = 0; i <= listOfKeys.size() - 1; i++) {
+                Response responseGetAuth = given()
+                        .filter(new AllureRestAssured())
+                        .get(urlCardForTestTitleFromRequest)
+                        .andReturn();
+                listOfVal.add(getSingleHeaderFromJson(responseGetAuth, "data", "." + listOfKeys.get(i)));
+            }
+            return listOfVal;
         }
-        return listOfVal;
     }
-}
+

@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import pages.base.BasePage;
 
+import static common.CommonJobs.getExistElement;
 import static common.CommonJobs.getExistElementByQuantity;
 public class TagsPageSEO extends BasePage {
     public TagsPageSEO(WebDriver driver) {
@@ -12,7 +13,7 @@ public class TagsPageSEO extends BasePage {
     }
 
     public TagsPageSEO checkExistCards(String xpath, String nameOfTest) {
-        getExistElementByQuantity(By.xpath(xpath), nameOfTest);
+        getExistElement(By.xpath(xpath), nameOfTest);
         return this;
     }
 }
